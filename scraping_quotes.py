@@ -1,5 +1,5 @@
 from selenium.webdriver.common.by import By
-
+import json
 
 class Quotes:
 
@@ -15,9 +15,23 @@ class Quotes:
     def get_quotes(self):   
     
         for quote, author, tags in zip(self.quotes, self.author, self.tags):
-            print(quote.text)
-            print(self.driver.find_element(*self.url).get_attribute('href'))
+            url = self.driver.find_element(*self.url).get_attribute('href')
+            tags = tags.text
+            tags = str(tags).split(' ')
             self.i += 1
-            print(author.text)
-            print(tags.text)
-            input('continuar')      
+           
+            dict_quotes = {
+                "quote": quote.text,
+                "author": {
+                    "name":author.text,
+                    "url":url
+                },
+                "tags":tags
+            }
+            print(dict_quotes)
+            self.write_json(dict_quotes)
+            #input('continuar')   
+
+    def write_json(self, dict):
+        with open('quotes.json', 'a') as f:
+            return json.dump(dict, f, indent=4, separators=(',', ':'))
