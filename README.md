@@ -9,12 +9,12 @@ Percorre todas as páginas do site [Quotes to Scrape](http://quotes.toscrape.com
 As informaçãos são gravadas num arquivo `.json`, gerado a partir da execução do programa, seguindo a estrutura do dicionário: 
 ``` python
 {
-    "quote": quotes.text,
+    "quote": quote,
     "author": {
-         "name":author.text,
+         "name":author,
          "url":url
      },
-    "tags":tags
+    "tags":[tags]
 }
 
 ```
@@ -22,7 +22,7 @@ As informaçãos são gravadas num arquivo `.json`, gerado a partir da execuçã
 ## Tools
 - [Python](https://docs.python.org/3/)
 - [Selenium Framework](https://www.selenium.dev/documentation/)
-    - **webdriver**: utlizado chrome driver para interação com browser
+    - **webdriver**: utilizado chrome driver para interação com browser
         - `webdriver-manager`: realiza o download do driver automaticamente de acordo com a versão instalada do chrome
         
  ## execute
