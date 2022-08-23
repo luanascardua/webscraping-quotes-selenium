@@ -6,6 +6,7 @@ from scraping_quotes import Quotes
 
 
 chrome_options = webdriver.ChromeOptions()
+chrome_options.add_argument('--headless')
 chrome_options.add_argument('--log-level=3')
 chrome_options.add_argument('--start-maximized')
 chrome = Service(ChromeDriverManager().install())
