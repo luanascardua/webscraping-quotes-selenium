@@ -18,6 +18,13 @@ As informaçãos são gravadas num arquivo `.json`, gerado a partir da execuçã
 }
 
 ```
+<br>
+
+#### hide browser
+para ocultar o navegador ao rodar a aplicação pode ser adicionado um argumento nas opções de configuração do chrome driver:
+``` python
+chrome_options.add_argument('--headless')
+```
 
 ## Tools
 - [Python](https://docs.python.org/3/)
